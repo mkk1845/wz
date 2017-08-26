@@ -2,11 +2,36 @@
 
 namespace App;
 
-use App\model;
+
+use \App\Model;
+use Laravel\Scout\Searchable;
+use Illuminate\Database\Eloquent\Builder;
 
 class Post extends Model
 {
-       // 关联用户
+
+    use Searchable;
+
+
+
+    /*
+     * 搜索的type
+     */
+    public function searchableAs()
+    {
+        return 'post';
+    }
+
+    public function toSearchableArray()
+    {
+        return [
+            'title' => $this->title,
+            'content' => $this->content,
+        ];
+    }
+
+
+    // 关联用户
         public  function user()
         {
             return $this->belongsTo('App\User','user_id','id');

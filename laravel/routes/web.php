@@ -37,6 +37,8 @@ Route::get('/posts','\App\Http\Controllers\PostController@index');
 Route::get('posts/create','\App\Http\Controllers\PostController@create');
 Route::post('/posts','\App\Http\Controllers\PostController@store');
 
+
+Route::get('/posts/search', '\App\Http\Controllers\PostController@search');
 //文章详情
 Route::get('/posts/{post}','\App\Http\Controllers\PostController@show');
 
@@ -57,5 +59,10 @@ Route::post('/posts/{post}/comment','\App\Http\Controllers\PostController@commen
 
 Route::get('/posts/{post}/zan', '\App\Http\Controllers\PostController@zan');
 Route::get('/posts/{post}/unzan', '\App\Http\Controllers\PostController@unzan');
+
+
+
+
+
 
 

@@ -1,4 +1,4 @@
-@extends("layout.main")
+@extends("layou.main")
 
 @section("content")
 
@@ -15,7 +15,7 @@
                 <p>{!! str_limit($post->content, 200, '...') !!}</p>
             </div>
         @endforeach
-
+        {{--分页逻辑--}}
         {{$posts->links()}}
     </div><!-- /.blog-main -->
 
