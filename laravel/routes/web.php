@@ -24,6 +24,7 @@ Route::get('/register','\App\Http\Controllers\RegisterController@index');
 //注册行为
 Route::post('/register','\App\Http\Controllers\RegisterController@register');
 
+
 //个人设置页面
 Route::get('/user/me/setting','\App\Http\Controllers\UserController@setting');
 
@@ -60,6 +61,14 @@ Route::post('/posts/{post}/comment','\App\Http\Controllers\PostController@commen
 Route::get('/posts/{post}/zan', '\App\Http\Controllers\PostController@zan');
 Route::get('/posts/{post}/unzan', '\App\Http\Controllers\PostController@unzan');
 
+
+
+
+
+
+Route::get('/user/{user}', '\App\Http\Controllers\UserController@show');
+Route::post('/user/{user}/fan', '\App\Http\Controllers\UserController@fan');
+Route::post('/user/{user}/unfan', '\App\Http\Controllers\UserController@unfan');
 
 
 
