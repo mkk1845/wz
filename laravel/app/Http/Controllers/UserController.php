@@ -11,7 +11,7 @@ class UserController extends Controller
     public  function setting()
     {
         $me = \Auth::user();
-        return view('user.setting', compact('post'));
+        return view('user/setting', compact('me'));
     }
     //个人设置操作
     public function settingStore(Request $request, User $user)
